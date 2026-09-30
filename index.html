@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="A sleek modern glassmorphism stopwatch built with HTML, CSS, and Vanilla JS" />
+  <title>Modern Glass Stopwatch</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="bg-orb orb-1" aria-hidden="true"></div>
+  <div class="bg-orb orb-2" aria-hidden="true"></div>
+  <div class="bg-orb orb-3" aria-hidden="true"></div>
+
+  <main class="app" role="main">
+    <section class="stopwatch glass" aria-labelledby="app-title">
+      <header class="stopwatch__header">
+        <h1 id="app-title" class="stopwatch__title">Stopwatch</h1>
+        <p class="stopwatch__subtitle">Precision to the millisecond</p>
+      </header>
+
+      <div class="display" aria-live="polite" aria-atomic="true">
+        <time id="display" class="display__time" datetime="PT0S">00:00.000</time>
+      </div>
+
+      <div class="controls" role="group" aria-label="Stopwatch controls">
+        <button id="startBtn" class="btn btn--start" type="button">Start</button>
+        <button id="pauseBtn" class="btn btn--pause" type="button" disabled>Pause</button>
+        <button id="lapBtn" class="btn btn--lap" type="button" disabled>Lap</button>
+        <button id="resetBtn" class="btn btn--reset" type="button" disabled>Reset</button>
+      </div>
+
+      <section class="laps" aria-labelledby="laps-title">
+        <h2 id="laps-title" class="laps__title">Laps</h2>
+        <ol id="lapList" class="laps__list" aria-live="polite"></ol>
+        <p id="lapsEmpty" class="laps__empty">No laps recorded yet.</p>
+      </section>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
